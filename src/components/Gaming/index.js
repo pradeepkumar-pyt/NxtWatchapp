@@ -7,7 +7,14 @@ import {Link} from 'react-router-dom'
 import Header from '../Header'
 import Sidebar from '../Sidebar'
 import ThemeAndVideoContext from '../../context/ThemeAndVideoContext'
-import {RouteContainer} from '../StyledComponents'
+import {
+  RouteContainer,
+  VideoGrid,
+  VideoCard,
+  ThumbnailImage,
+  VideoTitle,
+  VideoMeta,
+} from '../StyledComponents'
 import {formatViewsCount} from '../../utils/formatters'
 
 class Gaming extends Component {
@@ -64,24 +71,29 @@ class Gaming extends Component {
                 {apiStatus === 'IN_PROGRESS' ? (
                   this.renderLoader()
                 ) : (
-                  <ul>
+                  <VideoGrid>
                     {gamingVideos.map(video => (
-                      <li key={video.id}>
+                      <VideoCard key={video.id}>
                         {/* FIX: wrap in Link so click navigates to /videos/:id */}
                         <Link
                           to={`/videos/${video.id}`}
                           style={{textDecoration: 'none', color: 'inherit'}}
                         >
-                          <img src={video.thumbnailUrl} alt="video thumbnail" />
-                          <p>{video.title}</p>
-                          <p>
+                          <ThumbnailImage
+                            src={video.thumbnailUrl}
+                            alt="video thumbnail"
+                          />
+                          <VideoTitle isDark={isDarkTheme}>
+                            {video.title}
+                          </VideoTitle>
+                          <VideoMeta>
                             {formatViewsCount(video.viewCount)} Watching
                             Worldwide
-                          </p>
+                          </VideoMeta>
                         </Link>
-                      </li>
+                      </VideoCard>
                     ))}
-                  </ul>
+                  </VideoGrid>
                 )}
               </RouteContainer>
             </div>

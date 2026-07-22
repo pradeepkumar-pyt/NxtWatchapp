@@ -72,3 +72,36 @@ export const CheckboxRow = styled.div`
   gap: 8px;
   margin-bottom: 20px;
 `
+export const VideoGrid = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  gap: 20px;
+`
+
+export const VideoCard = styled.li`
+  width: 300px;
+  list-style-type: none;
+`
+
+export const ThumbnailImage = styled.img`
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+`
+
+export const VideoTitle = styled.p`
+  font-size: 15px;
+  font-weight: 500;
+  margin: 10px 0 5px 0;
+  color: ${props => (props.isDark ? '#ffffff' : '#0f0f0f')};
+`
+
+export const VideoMeta = styled.p`
+  font-size: 13px;
+  color: #64748b;
+  margin: 3px 0;
+`
