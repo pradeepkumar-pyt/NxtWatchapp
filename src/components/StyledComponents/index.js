@@ -105,3 +105,29 @@ export const VideoMeta = styled.p`
   color: #64748b;
   margin: 3px 0;
 `
+export const EmptyStateContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+`
+
+export const EmptyStateImage = styled.img`
+  width: 300px;
+  max-width: 90%;
+  margin-bottom: 20px;
+`
+
+export const EmptyStateHeading = styled.h1`
+  font-size: 22px;
+  color: ${props => (props.isDark ? '#ffffff' : '#0f0f0f')};
+  margin-bottom: 10px;
+`
+
+export const EmptyStateText = styled.p`
+  font-size: 14px;
+  color: #64748b;
+  max-width: 400px;
+`
