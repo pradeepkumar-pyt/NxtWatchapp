@@ -3,7 +3,6 @@ import Loader from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 import {IoMdSearch, IoMdClose} from 'react-icons/io'
 import {Link} from 'react-router-dom'
-
 import Header from '../Header'
 import Sidebar from '../Sidebar'
 import ThemeAndVideoContext from '../../context/ThemeAndVideoContext'
@@ -136,7 +135,9 @@ class Home extends Component {
                     {video.channel.name}
                   </p>
                   <p style={{fontSize: '12px', color: '#64748b', margin: 0}}>
-                    {formatViewsCount(video.viewCount)} views •{' '}
+                    {formatViewsCount(video.viewCount)} views
+                  </p>
+                  <p style={{fontSize: '12px', color: '#64748b', margin: 0}}>
                     {formatPublishedDate(video.publishedAt)}
                   </p>
                 </div>

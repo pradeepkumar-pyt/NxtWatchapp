@@ -109,6 +109,8 @@ class VideoItemDetails extends Component {
                       >
                         <p style={{color: '#64748b'}}>
                           {formatViewsCount(videoDetails.viewCount)} views{' '}
+                        </p>
+                        <p style={{color: '64748b'}}>
                           {formatPublishedDate(videoDetails.publishedAt)}
                         </p>
                         <div style={{display: 'flex', gap: '15px'}}>

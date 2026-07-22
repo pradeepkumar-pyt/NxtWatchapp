@@ -40,10 +40,8 @@ const SavedVideos = () => (
                           <p>{video.title}</p>
                           <p>{video.channel.name}</p>
                           {/* FIX: formatted view count + published date */}
-                          <p>
-                            {formatViewsCount(video.viewCount)} views •{' '}
-                            {formatPublishedDate(video.publishedAt)}
-                          </p>
+                          <p>{formatViewsCount(video.viewCount)} views </p>
+                          <p>{formatPublishedDate(video.publishedAt)}</p>
                         </Link>
                       </li>
                     ))}

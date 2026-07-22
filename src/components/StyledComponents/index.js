@@ -29,3 +29,46 @@ export const ActionButton = styled.button`
   cursor: pointer;
   color: ${props => (props.isActive ? '#2563eb' : '#64748b')};
 `
+export const LoginButton = styled.button`
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+`
+export const LoginCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+  width: 350px;
+`
+
+export const InputField = styled.input`
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  box-sizing: border-box;
+`
+
+export const InputLabel = styled.label`
+  font-size: 12px;
+  font-weight: bold;
+  color: #64748b;
+  letter-spacing: 1px;
+`
+
+export const CheckboxRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+`

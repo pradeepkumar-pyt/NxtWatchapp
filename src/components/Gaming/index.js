@@ -8,7 +8,7 @@ import Header from '../Header'
 import Sidebar from '../Sidebar'
 import ThemeAndVideoContext from '../../context/ThemeAndVideoContext'
 import {RouteContainer} from '../StyledComponents'
-import {formatViewsCount, formatPublishedDate} from '../../utils/formatters'
+import {formatViewsCount} from '../../utils/formatters'
 
 class Gaming extends Component {
   state = {gamingVideos: [], apiStatus: 'INITIAL'}

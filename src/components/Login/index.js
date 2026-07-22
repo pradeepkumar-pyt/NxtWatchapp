@@ -1,7 +1,14 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
-import {LoginContainer} from '../StyledComponents'
+import {
+  LoginContainer,
+  LoginButton,
+  LoginCard,
+  InputField,
+  InputLabel,
+  CheckboxRow,
+} from '../StyledComponents'
 import ThemeAndVideoContext from '../../context/ThemeAndVideoContext'
 
 class Login extends Component {
@@ -57,7 +64,7 @@ class Login extends Component {
       <ThemeAndVideoContext.Consumer>
         {({isDarkTheme}) => (
           <LoginContainer isDark={isDarkTheme}>
-            <form onSubmit={this.submitForm}>
+            <LoginCard>
               <img
                 src={
                   isDarkTheme
@@ -65,34 +72,53 @@ class Login extends Component {
                     : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
                 }
                 alt="website logo"
+                style={{
+                  width: '150px',
+                  marginBottom: '30px',
+                  alignSelf: 'center',
+                }}
               />
-              <label htmlFor="username">USERNAME</label>
-              <input
-                id="username"
-                type="text"
-                value={username}
-                onChange={e => this.setState({username: e.target.value})}
-              />
-              <label htmlFor="password">PASSWORD</label>
-              <input
-                id="password"
-                type={showPassword ? 'text' : 'password'} // NEW: toggled type
-                value={password}
-                onChange={e => this.setState({password: e.target.value})}
-              />
+              <form onSubmit={this.submitForm} style={{width: '100%'}}>
+                <InputLabel htmlFor="username">USERNAME</InputLabel>
+                <br />
+                <InputField
+                  id="username"
+                  type="text"
+                  value={username}
+                  onChange={e => this.setState({username: e.target.value})}
+                />
 
-              {/* NEW: Show Password checkbox */}
-              <input
-                type="checkbox"
-                id="showPassword"
-                checked={showPassword}
-                onChange={this.onToggleShowPassword}
-              />
-              <label htmlFor="showPassword">Show Password</label>
+                <InputLabel htmlFor="password">PASSWORD</InputLabel>
+                <br />
+                <InputField
+                  id="password"
+                  type={showPassword ? 'text' : 'password'}
+                  value={password}
+                  onChange={e => this.setState({password: e.target.value})}
+                />
 
-              <button type="submit">Login</button>
-              {showError && <p>*{errorMsg}</p>}
-            </form>
+                <CheckboxRow>
+                  <input
+                    type="checkbox"
+                    id="showPassword"
+                    checked={showPassword}
+                    onChange={this.onToggleShowPassword}
+                  />
+                  <InputLabel htmlFor="showPassword" style={{fontSize: '13px'}}>
+                    Show Password
+                  </InputLabel>
+                </CheckboxRow>
+
+                <LoginButton type="submit" style={{width: '100%'}}>
+                  Login
+                </LoginButton>
+                {showError && (
+                  <p style={{color: '#ff0000', fontSize: '13px'}}>
+                    *{errorMsg}
+                  </p>
+                )}
+              </form>
+            </LoginCard>
           </LoginContainer>
         )}
       </ThemeAndVideoContext.Consumer>
